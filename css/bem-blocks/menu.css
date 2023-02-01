@@ -1,0 +1,27 @@
+.menu {
+  
+}
+
+.menu__title {
+  margin-bottom: 2rem;
+
+  font-size: 2.4rem;
+}
+
+.menu__item {
+  margin-bottom: 1rem;
+}
+
+.menu__item:last-child {
+  margin-bottom: 0;
+}
+
+.menu__link {
+  transition: 0.2s;
+  
+  font-size: 2rem;
+}
+
+.menu__link:hover {
+  color: coral;
+}

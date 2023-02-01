@@ -1,0 +1,72 @@
+/* RESET, NORMALIZE STYLES: */
+@import url('./reset.css');
+@import url('./normalize.css');
+
+/* FONTS LOAD SECTION: */
+@import url('./fonts.css');
+
+/* LAYOUTS STYLES: */
+@import url('./layout/page.css');
+@import url('./layout/content.css');
+@import url('./layout/aside.css');
+@import url('./layout/header.css');
+@import url('./layout/main.css');
+@import url('./layout/footer.css');
+@import url('./layout/container.css');
+
+/* UI STYLES: */
+@import url('./commons.css');
+
+/* BEM BLOCKS: */
+@import url('./bem-blocks/menu.css');
+@import url('./bem-blocks/search-bar.css');
+@import url('./bem-blocks/vacancies.css');
+@import url('./bem-blocks/vacancy-form.css');
+
+/* USER VARIABLES SECTION: */
+:root {
+	--accent-color: coral;
+	--text-color: #eeeeee;
+	--white-color: #ffffff;
+	--color-grey: #cccccc;
+	--back-color-1: darkcyan;
+	--back-color-2: darkslategray;
+	--regular-text: 10px;
+	--lineheight: 1.65;
+	--userfont: roboto-st, sans-serif;
+	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+html {
+	font-size: var(--regular-text);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+	position: relative;
+	
+	min-width: 320px;
+	max-height: 100vh;
+	overflow: hidden;
+
+	color: var(--text-color);
+	font-family: var(--userfont);
+	font-size: 1.6rem;
+	line-height: var(--lineheight);
+
+	text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
+}
+
+
+@media (max-width : 768px) {
+	body {
+		color: var(--text-color);
+		font-family: var(--userfont);
+		font-size: 1.4rem;
+	}
+}

@@ -1,0 +1,39 @@
+.aside__menu {
+  padding-top: 5rem;
+}
+
+.aside__burger-btn {
+  position: absolute;
+  left: calc(100%);
+  top: 0.5rem;
+
+  width: 4rem;
+  height: 4rem;
+  padding-left: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.aside__burger-btn .material-symbols-outlined {
+  font-size: 32px;
+}
+
+.icon-sidebar-close {
+  display: none !important;
+}
+
+.menu--open .icon-sidebar-open {
+  display: none !important;
+}
+
+.menu--open .icon-sidebar-close {
+  display: block !important;
+  color: var(--accent-color);
+}

@@ -1,0 +1,55 @@
+.vacancies__button-devider {
+  margin: 1rem 0;
+  padding: 2rem 0;
+
+  border-style: solid;
+  border-color: var(--color-grey);
+  border-width: 0 0 0.1rem 0;
+}
+
+
+
+@media (max-width : 1199px) {
+  .vacancies__list-heading {
+    display: none;
+  }
+}
+
+.vacancies__add-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+
+  font-size: 2rem;
+  color: var(--white-color);
+  transition: color 0.3s
+}
+
+.vacancies__add-btn .material-symbols-outlined {
+  font-size: 40px;
+  color: var(--white-color);
+  transition: 0.3s
+}
+
+.vacancies__add-btn:hover {
+  color: var(--accent-color);
+}
+
+.vacancies__add-btn:hover .material-symbols-outlined {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.vacancies__add-btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  color: var(--white-color);
+}
+
+.vacancies__add-btn:disabled .material-symbols-outlined {
+  color: var(--white-color);
+}
+
+.vacancies__list li{
+  list-style: decimal;
+}

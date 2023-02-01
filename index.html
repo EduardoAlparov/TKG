@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>TKG</title>
+	<meta name="description" content="Simple Starter Description">
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/preview.jpg">
+
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+	<script src="https://unpkg.com/imask"></script>
+	<script src="js/common.js" defer></script>
+
+</head>
+
+<body class="preload page">
+
+	<h1 class="page__title visually-hidden">
+		page main seo title
+	</h1>
+
+	<div class="page__wrapper">
+		<main class="page__main content">
+
+			<header class="content__header header p-sm">
+				<div class="header__search-bar search-bar">
+					<input type="text" maxlength="40" class="search-bar__input" placeholder="Поиск">
+					<div class="search-bar__icon">
+						<span class="material-symbols-outlined">
+							search
+						</span>
+					</div>
+				</div>
+			</header>
+
+			<section class="content__section p-lg">
+				<div class="section__container">
+					<div class="vacancies">
+						<!-- for vacancy form START -->
+						<div class="vacancies__request" id="form-container"></div>
+						<!-- for vacancy form END -->
+
+						<div class="vacancies__button-devider">
+							<button class="vacancies__add-btn js-add-form">
+								<span class="material-symbols-outlined">
+									add_circle
+								</span>
+								<span>
+									Добавить
+								</span>
+							</button>
+						</div>
+
+						<div class="vacancies__list-wrapper">
+							<h2 class="vacancy-form__title">
+								Активные заявки:
+							</h2>
+
+							<div class="vacancies__list-heading visually-hidden">
+								<div class="vacancy-form__body">
+									<div class="vacancy-form__input-wrapper">
+										<div class="vacancy-form__label">
+											ФИО
+										</div>
+									</div>
+									<div class="vacancy-form__input-wrapper">
+										<div class="vacancy-form__label">
+											Должность
+										</div>
+									</div>
+									<div class="vacancy-form__input-wrapper">
+										<div class="vacancy-form__label">
+											Дата рождения
+										</div>
+									</div>
+									<div class="vacancy-form__input-wrapper">
+										<div class="vacancy-form__label">
+											Компетенции
+										</div>
+									</div>
+									<div class="vacancy-form__controls vacancy-form__controls--hidden">
+										<div class="vacancy-form__label">
+											Управление
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<!-- for vacancies list START -->
+							<ol class="vacancies__list" id="vacancy-container"></ol>
+							<!-- for vacancies list END -->
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<footer class="content__footer p-sm">
+				Webdev 2023-2024.
+			</footer>
+
+		</main>
+	</div>
+
+	<aside class="page__aside aside p-lg" id="aside">
+		<nav class="aside__menu menu">
+
+			<h3 class="menu__title">
+				Меню
+			</h3>
+
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						Пункт меню 1
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						Пункт меню 2
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						Пункт меню 3
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						Пункт меню 4
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="aside__burger-btn" id="btn-menu" draggable="true">
+			<span class="icon-sidebar-open material-symbols-outlined">
+				left_panel_open
+			</span>
+			<span class="icon-sidebar-close material-symbols-outlined">
+				left_panel_close
+			</span>
+		</div>
+
+	</aside>
+
+	<template id="template-form">
+		<form action="./test.php" class="vacancy-form js-complete-form">
+			<h2 class="vacancy-form__title">
+				Заполните форму для заявкy на вакансию:
+			</h2>
+
+			<div class="vacancy-form__body">
+
+				<div class="vacancy-form__input-wrapper">
+					<div class="vacancy-form__label">
+						ФИО
+					</div>
+
+					<input 
+						type="text" 
+						name="name"
+						class="vacancy-form__input js-input-mask_text"
+						required 
+					>
+				</div>
+
+				<div class="vacancy-form__input-wrapper">
+					<div class="vacancy-form__label">
+						Должность
+					</div>
+
+					<select name="position" class="vacancy-form__select" required>
+						<option value="">Должность</option>
+						<option value="analyst">Аналитик</option>
+						<option value="manager">Менеджер</option>
+						<option value="programmer">Программист</option>
+						<option value="lawyer">Юрист</option>
+					</select>
+				</div>
+
+				<div class="vacancy-form__input-wrapper">
+					<div class="vacancy-form__label">
+						Дата рождения
+					</div>
+
+					<input 
+						type="date" 
+						name="date"
+						max="2010-01-02"
+						class="vacancy-form__input js-input-mask_age"
+						required 
+					>
+				</div>
+
+				<div class="vacancy-form__input-wrapper">
+					<div class="vacancy-form__label">
+						Компетенции
+					</div>
+
+					<textarea 
+						type="text" 
+						name="comment"
+						class="vacancy-form__textarea js-text-mask"
+					></textarea>
+				</div>
+
+				<div class="vacancy-form__controls">
+					<button type="reset" class="vacancy-form__btn">
+						<span>Очистить</span>
+
+						<span class="material-symbols-outlined">
+							radio_button_unchecked
+						</span>
+					</button>
+
+					<button type="button" class="vacancy-form__btn js-delete-form">
+						<span>Отменить</span>
+						<span class="material-symbols-outlined">
+							cancel
+						</span>
+					</button>
+
+					<button type="submit" class="vacancy-form__btn js-submit-form">
+						<span>Добавить</span>
+
+						<span class="material-symbols-outlined">
+							check_circle
+						</span>
+					</button>
+				</div>
+			</div>
+		</form>
+	</template>
+
+	<template id="template-vacancy-item">
+		<div class="vacancy-form__body">
+			<div class="vacancy-form__input-wrapper">
+				<div class="vacancy-form__label">
+					ФИО
+				</div>
+				<div class="">
+					<span data-role="name"></span>
+				</div>
+			</div>
+			
+			<div class="vacancy-form__input-wrapper">
+				<div class="vacancy-form__label">
+					Должность
+				</div>
+				<div class="">
+					<span data-role="position"></span>
+				</div>
+			</div>
+
+			<div class="vacancy-form__input-wrapper">
+				<div class="vacancy-form__label">
+					Дата рождения
+				</div>
+				<div class="">
+					<span data-role="date"></span>
+				</div>
+			</div>
+
+			<div class="vacancy-form__input-wrapper">
+				<div class="vacancy-form__label">
+					Компетенции
+				</div>
+
+				<div class="">
+					<span data-role="comment"></span>
+				</div>
+			</div>
+
+			<div class="vacancy-form__controls">
+				<button type="button" class="vacancy-form__btn">
+					<span>Удалить</span>
+					<span class="material-symbols-outlined">
+						cancel
+					</span>
+				</button>
+			</div>
+		</div>
+	</template>
+
+</body>
+
+</html>
